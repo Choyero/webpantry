@@ -1,32 +1,42 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+   <Navigation />
+   <div>
+     <router-view />
+   </div>
+   <div class="footer">
+     <a href="https://github.com/Choyero/webpantry.git"><img src="../images/github.png" alt=""></a>
     </div>
-    <router-view/>
+    
   </div>
 </template>
 
+<script>
+import Navigation from './components/Navbar.vue'
+
+export default {
+  components: {
+    Navigation,
+  }
+}
+</script>
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+body {
+  margin: 50px;
+  position: relative;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.footer {
+    height: 100%;
+    margin-top: 28px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 </style>
